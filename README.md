@@ -18,11 +18,11 @@ Install from source or use pip:
 pip install django_transaction_barrier
 ```
 
-and add "transaction_barrier" to INSTALLED_APPS in settings.py:
+and add "django_transaction_barrier" to INSTALLED_APPS in settings.py:
 
 ```python
 INSTALLED_APPS = (
-    'transaction_barrier',
+    'django_transaction_barrier',
     ...
 )
 ```
@@ -32,7 +32,7 @@ INSTALLED_APPS = (
 ```python
 from celery import task
 from django.db import transaction
-from transaction_barrier.celery import TransactionBarrierTask
+from django_transaction_barrier.celery import TransactionBarrierTask
 
 @task(base=TransactionBarrierTask)
 def do_something_task(model_id):
