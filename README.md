@@ -84,6 +84,12 @@ TransactionBarrierTask (e.g., with Celery eager mode) within a
 transaction, the task executes immediately without waiting for the
 transaction to commit.
 
+## Tests
+
+```sh
+docker build -t tests . && docker run tests
+```
+
 ## TODO
 
 * Add support for a mysql backend.

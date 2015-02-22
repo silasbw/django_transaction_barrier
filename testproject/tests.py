@@ -1,10 +1,16 @@
 #!/usr/bin/python
 # coding: utf-8
+from __future__ import absolute_import
 
 # These tests require a running celery worker and CELERY_ALWAYS_EAGER=False.
 
-from celery import task
 import os
+import django
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'testproject.settings'
+django.setup()
+
+from celery import task
 import random
 import unittest
 from unittest import TestCase
@@ -58,7 +64,7 @@ class TestTransactionBarrier(TestCase):
 
   def test_task_apply_with_barrier_required(self):
     with self.assertRaises(RuntimeError):
-      TransactionBarrierTestTask.apply(self.file_path)
+      TransactionBarrierTestTask.apply(args=(self.file_path,), throw=True)
 
   def test_decorator_apply_async_with_barrier(self):
     with transaction.atomic():
