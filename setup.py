@@ -20,7 +20,7 @@ setup(
     'Programming Language :: Python :: 2.7',
   ),
   description='Transaction barriers for Django and Celery.',
-  download_url='https://github.com/godaddy/django_transaction_barrier/tarball/0.2',
+  download_url='https://github.com/godaddy/django_transaction_barrier/tarball/0.3',
   include_package_data=True,
   install_requires=('Django>=1.4.0,<1.8.0','celery>=3.0.0,<4.0.0'),
   keywords=('django', 'transaction', 'celery', 'atomic'),
@@ -29,6 +29,6 @@ setup(
   name='django-transaction-barrier',
   packages=('django_transaction_barrier', 'django_transaction_barrier.migrations'),
   url='https://github.com/godaddy/django_transaction_barrier',
-  version='0.2',
+  version='0.3',
   zip_safe=True,
 )
